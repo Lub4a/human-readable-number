@@ -92,7 +92,7 @@ module.exports = function toReadable (number) {
     }
     return word;
  }
- getWordWithOneNumber(20);
+ getWordWithOneNumber(number);
 
 
       if (number >= 100) {
