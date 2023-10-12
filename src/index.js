@@ -29,12 +29,13 @@ const numbersToWords = {
       80: "eighty",
       90: "ninety",
     };
+    function getWorld(number) {
       if (number in numbersToWords) return numbersToWords[number];
 
       let words = "";
 
       if (number >= 100) {
-          words += toReadable(Math.floor(number / 100)) + " hundred";
+          words += getWorld(Math.floor(number / 100)) + " hundred";
           number %= 100;
       }
       if (number > 0) {
@@ -49,4 +50,5 @@ const numbersToWords = {
             }
         }
     return words;
+}
 };
