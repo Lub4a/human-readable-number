@@ -92,24 +92,21 @@ module.exports = function toReadable (number) {
     }
     return word;
  }
- getWordWithOneNumber(number);
-
 
       if (number >= 100) {
-          word +=toReadable( Math.floor(number / 100))+ " hundred";
+          word +=getWordWithOneNumber( Math.floor(number / 100))+ " hundred";
           number %= 100;
       }
       if (number > 0) {
-          if (word !== "") words += " and ";
-          if (number < 20) words += numbersToWords[number];
+          if (word !== "") word += " and ";
+          if (number < 20) word += getWordWithOneNumber(number);
           else {
-              word += numbersToWords[Math.floor(number / 10) * 10];
+              word += getWordWithOneNumber[Math.floor(number / 10) * 10];
 
               if (number % 10 > 0) {
-                  word += "-" + numbersToWords[number % 10];
+                  word += "-" + getWordWithOneNumber[number % 10];
                 }
             }
         }
     return word;
-    }
-
+ }
