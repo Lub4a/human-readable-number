@@ -1,7 +1,6 @@
 module.exports = function toReadable (number) {
 
     let word = " ";
-    function getWordWithOneNumber(number){
 
     if (number === 0){
        word = 'zero';
@@ -90,21 +89,19 @@ module.exports = function toReadable (number) {
             word = "ninety";
             break;
     }
-    return word;
- }
 
       if (number >= 100) {
-          word +=getWordWithOneNumber( Math.floor(number / 100))+ " hundred";
+          word += toReadable(Math.floor(number / 100)) + " hundred";
           number %= 100;
       }
       if (number > 0) {
           if (word !== "") word += " and ";
           if (number < 20) word += getWordWithOneNumber(number);
           else {
-              word += getWordWithOneNumber[Math.floor(number / 10) * 10];
+              word += toReadable [Math.floor(number / 10) * 10];
 
               if (number % 10 > 0) {
-                  word += "-" + getWordWithOneNumber[number % 10];
+                  word += "-" + toReadable [number % 10];
                 }
             }
         }
